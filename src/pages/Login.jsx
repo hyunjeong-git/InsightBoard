@@ -71,7 +71,7 @@ const Login = () => {
           </div>
 
           <div className="flex items-center justify-between text-sm">
-            <Link to="/register" className="font-medium text-green-600 hover:text-green-500">
+            <Link to="/signup" className="font-medium text-green-600 hover:text-green-500">
               회원가입
             </Link>
             <a href="#" className="font-medium text-green-600 hover:text-green-500">
