@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const SummaryCards = (props) => {
   const title = props.title;
 
   return (
-    <a href="#" class="hover:bg-gray-100">
+    <Link to="/detail" className="hover:bg-gray-100">
       <div class="rounded shadow-lg">
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{title}</div>
@@ -24,7 +26,7 @@ const SummaryCards = (props) => {
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
