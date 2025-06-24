@@ -10,7 +10,7 @@ const people = [
 ];
 
 function DashboardPage() {
-  const listItems = people.map((person) => <SummaryCards></SummaryCards>);
+  const listItems = people.map((person) => <SummaryCards title={person}></SummaryCards>);
 
   return (
     <>
