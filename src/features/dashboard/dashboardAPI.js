@@ -12,7 +12,7 @@ export const getBitCoinPrices = async () => {
     )
  
     return res.data.prices.map(([timestamp, price]) => ({
-        date: new Date(timestamp).toLocaleDateString(),
+        date: timestamp,
         price: price.toFixed(2),
     }))
 }
