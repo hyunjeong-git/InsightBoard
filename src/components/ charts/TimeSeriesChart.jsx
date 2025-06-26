@@ -6,6 +6,14 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+import { timeFormat } from "d3-time-format";
+
+const format = timeFormat("%Y-%m-%d %H:%M:%S");
+
+const styles = {
+  fontFamily: "sans-serif",
+  textAlign: "center",
+};
 
 const tooltipStyles = {
   background: "#fff",
@@ -17,7 +25,9 @@ function CustomTooltip({ payload, label, active }) {
   if (active) {
     return (
       <div style={tooltipStyles}>
-        <p className="label">{`price: ${payload[0].value.toFixed(2)}`}</p>
+        <p className="label">{`date:${format(
+          payload[0].payload.date
+        )} / price: ${payload[0].payload.price}`}</p>
       </div>
     );
   }
@@ -26,16 +36,21 @@ function CustomTooltip({ payload, label, active }) {
 }
 
 function TimeSeriesChart({ data }) {
+  const prices = data.map((d) => d.price);
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+
   return (
     <LineChart
-      width={600}
+      width={1000}
       height={300}
       data={data}
+      style={styles}
       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
+      <XAxis dataKey="date" tickFormatter={timeFormat("%Y-%m-%d")} />
+      <YAxis domain={[minPrice, maxPrice]} />
       <Tooltip content={<CustomTooltip />} />
       <Line type="monotone" dataKey="price" stroke="#8884d8" />
     </LineChart>
