@@ -37,8 +37,8 @@ function CustomTooltip({ payload, label, active }) {
 
 function TimeSeriesChart({ data }) {
   const prices = data.map((d) => d.price);
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
+  const minPrice = Math.floor(Math.min(...prices));
+  const maxPrice = Math.ceil(Math.max(...prices));
 
   return (
     <LineChart
