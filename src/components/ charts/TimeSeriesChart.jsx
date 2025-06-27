@@ -27,7 +27,7 @@ function CustomTooltip({ payload, label, active }) {
       <div style={tooltipStyles}>
         <p className="label">{`date:${format(
           payload[0].payload.date
-        )} / price: ${payload[0].payload.price}`}</p>
+        )} / price: ${payload[0].payload.price} USD`}</p>
       </div>
     );
   }
