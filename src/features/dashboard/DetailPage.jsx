@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { getBitCoinPrices } from "./dashboardAPI";
 import TimeSeriesChart from "../../components/ charts/TimeSeriesChart";
+import DataTable from "../../components/table/DataTable";
 
 
 const DetailPage = () => {
@@ -18,6 +19,7 @@ const DetailPage = () => {
     <div>
       <h2>Dashboard Chart</h2>
       <TimeSeriesChart data={data} />
+      <DataTable data={data} />
     </div>
   );
 }
