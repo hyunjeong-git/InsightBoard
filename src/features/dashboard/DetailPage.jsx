@@ -19,7 +19,7 @@ const DetailPage = () => {
     <div>
       <h2>Dashboard Chart</h2>
       <TimeSeriesChart data={data} />
-      <DataTable data={data} />
+      <DataTable tableData={data} />
     </div>
   );
 }
