@@ -36,7 +36,7 @@ const DetailPage = () => {
         </svg>
         <span className="ml-1 font-bold text-lg">Back</span>
       </Link>
-      <h1>Dashboard Chart</h1>
+      <h1 className="text-[2.5rem]/none font-medium tracking-tight text-pretty p-4">Dashboard Chart</h1>
       <TimeSeriesChart data={data} />
       <DataTable tableData={data} />
     </div>
