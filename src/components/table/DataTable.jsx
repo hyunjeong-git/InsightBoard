@@ -29,7 +29,7 @@ function DataTable({ tableData }) {
   });
 
   return (
-    <div className="p-2">
+    <div className="h-96 overflow-y-auto p-2">
       <table className="border-collapse border border-gray-400">
         <thead className="bg-gray-100">
           {table.getHeaderGroups().map((headerGroup) => (
