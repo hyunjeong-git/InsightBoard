@@ -1,5 +1,6 @@
 import SummaryCards from "./SummaryCards";
 import ControlPanel from "../../components/dashboard/ControlPanel";
+import AddNewBoardCard from "./AddNewBoardCard";
 
 const people = [
   "Creola Katherine Johnson: mathematician",
@@ -15,7 +16,10 @@ function DashboardPage() {
   return (
     <>
       <ControlPanel />
-      <div className="grid grid-cols-4 gap-4">{listItems}</div>
+      <div className="grid grid-cols-4 gap-4">
+        {listItems}
+        <AddNewBoardCard />
+      </div>
     </>
   );
 }
