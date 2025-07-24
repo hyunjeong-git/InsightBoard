@@ -22,19 +22,85 @@ function AddNewBoardCardPopover() {
       </button>
 
       {isOpen && (
-        <div className="absolute flex flex-col w-[304px] h-[602px] rounded-lg shadow-lg bg-white border border-gray-200 p-4">
-          <p className="font-medium text-gray-600 mb-2">Create board</p>
-          <div
-            style={{
-              backgroundImage: 'url("/public/images/background_img_1.svg")',
-            }}
-            className="w-[200px] h-[120px]"
-          >
-            <img src="/public/images/board_img.svg"></img>
+        <div className="absolute flex flex-col w-[304px] h-[540px] rounded-lg shadow-lg bg-white border border-gray-200 p-4">
+          <div className="flex flex-col items-center mb-4">
+            <p className="font-medium text-gray-600 mb-2">Create board</p>
+            <div
+              style={{
+                backgroundImage: 'url("/public/images/background_img_1.svg")',
+              }}
+              className="flex justify-center w-[200px] h-[120px]"
+            >
+              <img src="/public/images/board_img.svg"></img>
+            </div>
           </div>
           <form>
-            <div className="text-[12px] leading-[16px] font-bold text-gray-700 text-left">
-              Background
+            <div className="background-wrap mb-4">
+              <div className="text-[12px] leading-[16px] font-bold text-gray-700 text-left">
+                Background
+              </div>
+
+              <div className="flex justify-between mb-2">
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_2.jpeg")',
+                  }}
+                ></button>
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_3.jpeg")',
+                  }}
+                ></button>
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_4.jpeg")',
+                  }}
+                ></button>
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_5.jpeg")',
+                  }}
+                ></button>
+              </div>
+
+              <div className="flex justify-between">
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_6.svg")',
+                  }}
+                ></button>
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_1.svg")',
+                  }}
+                ></button>
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_7.svg")',
+                  }}
+                ></button>
+                <button
+                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
+                  style={{
+                    backgroundImage:
+                      'url("/public/images/background_img_8.svg")',
+                  }}
+                ></button>
+              </div>
             </div>
 
             <div className="board-title-wrap mb-4">
@@ -49,7 +115,7 @@ function AddNewBoardCardPopover() {
               />
               <div className="mt-1 text-left">
                 <p className="text-[14px] leading-[16px] font-normal">
-                  Board title is required
+                  <span className="mr-1">👋</span>Board title is required
                 </p>
               </div>
             </div>
