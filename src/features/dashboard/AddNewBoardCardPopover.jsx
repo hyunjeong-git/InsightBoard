@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 
 function AddNewBoardCardPopover() {
+  console.log('test')
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef(null);
 
