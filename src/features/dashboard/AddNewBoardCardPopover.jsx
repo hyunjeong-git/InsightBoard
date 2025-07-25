@@ -1,9 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import VisibilityDropdown from "./VisibilityDropdown";
+import BackgroundBtn from "./BackgroundBtn";
+
 
 function AddNewBoardCardPopover() {
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef(null);
+  const backgroundImageNames = [
+    "background_img_2.jpeg",
+    "background_img_3.jpeg",
+    "background_img_4.jpeg",
+    "background_img_5.jpeg",
+    "background_img_6.svg",
+    "background_img_1.svg",
+    "background_img_7.svg",
+    "background_img_8.svg",
+  ];
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -36,70 +49,14 @@ function AddNewBoardCardPopover() {
           </div>
           <form>
             <div className="background-wrap mb-4">
-              <div className="text-[12px] leading-[16px] font-bold text-gray-700 text-left">
+              <div className="text-[12px] leading-[16px] font-bold text-gray-700 text-left mb-1">
                 Background
               </div>
 
-              <div className="flex justify-between mb-2">
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_2.jpeg")',
-                  }}
-                ></button>
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_3.jpeg")',
-                  }}
-                ></button>
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_4.jpeg")',
-                  }}
-                ></button>
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_5.jpeg")',
-                  }}
-                ></button>
-              </div>
-
-              <div className="flex justify-between">
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_6.svg")',
-                  }}
-                ></button>
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_1.svg")',
-                  }}
-                ></button>
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_7.svg")',
-                  }}
-                ></button>
-                <button
-                  className="w-[64px] h-[32px] bg-no-repeat bg-cover"
-                  style={{
-                    backgroundImage:
-                      'url("/public/images/background_img_8.svg")',
-                  }}
-                ></button>
+              <div className="flex flex-wrap justify-between mb-2">
+                {backgroundImageNames.map((imageName) => (
+                  <BackgroundBtn url={imageName} isActive={false} />
+                ))}
               </div>
             </div>
 
