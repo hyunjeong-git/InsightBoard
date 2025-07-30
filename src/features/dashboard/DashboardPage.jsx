@@ -1,6 +1,7 @@
 import SummaryCards from "./SummaryCards";
 import ControlPanel from "../../components/dashboard/ControlPanel";
 import AddNewBoardCard from "./AddNewBoardCard";
+import Navbar from "../../components/Navbar";
 
 const boards = [
   { title: 'My board', url: 'my-board'},
@@ -13,9 +14,12 @@ function DashboardPage() {
   return (
     <>
       <ControlPanel />
-      <div className="grid grid-cols-4 gap-4">
-        {listItems}
-        <AddNewBoardCard />
+      <div className="flex">
+        <Navbar />
+        <div className="grid grid-cols-4 gap-4">
+          {listItems}
+          <AddNewBoardCard />
+        </div>
       </div>
     </>
   );
