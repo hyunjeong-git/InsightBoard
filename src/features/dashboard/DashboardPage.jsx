@@ -1,19 +1,24 @@
+import React, { useState } from "react";
 import SummaryCards from "./SummaryCards";
 import ControlPanel from "../../components/dashboard/ControlPanel";
 import AddNewBoardCard from "./AddNewBoardCard";
 import Navbar from "../../components/Navbar";
 
 const boards = [
-  { title: 'My board', url: 'my-board'},
-  { title: 'Practice board', url: 'practice-board'},
+  { id: 0, title: 'My board', url: 'my-board'},
+  { id: 1, title: 'Practice board', url: 'practice-board'},
 ];
 
 function DashboardPage() {
-  const listItems = boards.map((board) => <SummaryCards title={board.title} url={board.url}></SummaryCards>);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const listItems = boards.filter((b) => b.title.includes(searchQuery)).map((board) => (
+    <SummaryCards key={board.id} title={board.title} url={board.url}></SummaryCards>)
+  );
 
   return (
     <>
-      <ControlPanel />
+      <ControlPanel searchQuery={searchQuery} onSearchChange={setSearchQuery}/>
       <div className="flex container mx-auto">
         <Navbar />
         <div className="ml-8">

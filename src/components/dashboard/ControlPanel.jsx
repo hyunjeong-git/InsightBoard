@@ -1,4 +1,4 @@
-const ControlPanel = () => {
+const ControlPanel = ({searchQuery, onSearchChange}) => {
   return (
     <div className="control-panel p-2 mb-4">
       <div className="min-w-full">
@@ -7,7 +7,9 @@ const ControlPanel = () => {
             type="text"
             name="search"
             className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-            placeholder="Search by name, email, or role"
+            placeholder="Search by board title"
+            value={searchQuery}
+            onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
       </div>
