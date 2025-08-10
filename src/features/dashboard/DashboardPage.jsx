@@ -14,11 +14,19 @@ function DashboardPage() {
   return (
     <>
       <ControlPanel />
-      <div className="flex">
+      <div className="flex container mx-auto">
         <Navbar />
-        <div className="grid grid-cols-4 gap-4">
-          {listItems}
-          <AddNewBoardCard />
+        <div className="ml-8">
+          <div className="title p-8">
+            <h1 className="text-[#172b4d] text-2xl font-medium">
+              Trello Workspace
+            </h1>
+          </div>
+          <hr />
+          <div className="grid grid-cols-4 gap-4 mt-8">
+            {listItems}
+            <AddNewBoardCard />
+          </div>
         </div>
       </div>
     </>
