@@ -18,11 +18,12 @@ function DashboardPage() {
 
   return (
     <>
-      <ControlPanel searchQuery={searchQuery} onSearchChange={setSearchQuery}/>
+      <ControlPanel searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <div className="flex container mx-auto">
         <Navbar />
         <div className="ml-8">
-          <div className="title p-8">
+          <div className="flex items-center title py-8">
+            <img src="/public/images/icons8-trello-48.png" className="mr-2"></img>
             <h1 className="text-[#172b4d] text-2xl font-medium">
               Trello Workspace
             </h1>
