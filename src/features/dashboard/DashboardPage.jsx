@@ -12,7 +12,7 @@ const boards = [
 function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const listItems = boards.filter((b) => b.title.includes(searchQuery)).map((board) => (
+  const listItems = boards.filter((b) => b.title.toLowerCase().includes(searchQuery.toLowerCase())).map((board) => (
     <SummaryCards key={board.id} title={board.title} url={board.url}></SummaryCards>)
   );
 
