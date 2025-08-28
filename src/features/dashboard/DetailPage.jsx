@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getBitCoinPrices } from "./dashboardAPI";
 import TimeSeriesChart from "../../components/ charts/TimeSeriesChart";
 import DataTable from "../../components/table/DataTable";
+import DndTest from "../../components/DndTest";
 
 const DetailPage = () => {
   const { data, isLoading, error } = useQuery({
@@ -16,6 +17,7 @@ const DetailPage = () => {
 
   return (
     <div>
+      <DndTest />
       <Link
         to="/"
         className="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50"
