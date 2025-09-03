@@ -14,16 +14,16 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import CardList from "./CardList";
 
 function SortableItem({ id }) {
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({ id });
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
     padding: "12px",
-    border: "1px solid gray",
+    // border: "1px solid gray",
     borderRadius: "6px",
     marginBottom: "8px",
     background: "white",
@@ -32,7 +32,7 @@ function SortableItem({ id }) {
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      {id}
+      <CardList title="Today"/>
     </div>
   );
 }
@@ -61,8 +61,7 @@ function Board() {
       <div className="header h-[56px] p-4 border-b-2">{title}</div>
 
       <div className="content">
-        <div style={{ width: 250 }}>
-          <h2 style={{ marginBottom: "16px" }}>Drag & Drop Example</h2>
+        <div className="m-4 w-[300px]">
           <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
