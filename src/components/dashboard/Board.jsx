@@ -15,6 +15,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import CardList from "./CardList";
+import Inbox from "./Inbox";
 
 function SortableItem({ id }) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
@@ -58,24 +59,27 @@ function Board() {
   };
 
   return (
-    <div className="w-full h-screen mt-4 border rounded-lg">
-      <div className="header h-[56px] p-4 border-b-2">{title}</div>
+    <div className="flex mt-4">
+      <div className="w-[272px] border rounded-lg mr-4">
+        <Inbox />
+      </div>
+      <div className="w-full h-screen border rounded-lg">
+        <div className="header h-[56px] p-4 border-b-2">{title}</div>
 
-      <div className="content">
-        <div className="m-4 flex">
-          <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
-            onDragEnd={handleDragEnd}
-          >
-            <SortableContext
-              items={items}
+        <div className="content">
+          <div className="m-4 flex">
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
             >
-              {items.map((id) => (
-                <SortableItem key={id} id={id} />
-              ))}
-            </SortableContext>
-          </DndContext>
+              <SortableContext items={items}>
+                {items.map((id) => (
+                  <SortableItem key={id} id={id} />
+                ))}
+              </SortableContext>
+            </DndContext>
+          </div>
         </div>
       </div>
     </div>
