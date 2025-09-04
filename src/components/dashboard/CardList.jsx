@@ -3,7 +3,7 @@ import Card from './Card';
 
 const CardList = ({title}) => {
   return (
-    <div className="card-list flex flex-col justify-between w-[272] max-h-full bg-[#f1f2f4] rounded-xl p-4">
+    <div className="card-list flex flex-col justify-between rounded-xl p-4">
       <div className="card-list-header flex justify-between items-center mb-4">
         <div>
           <span className="text-sm/[20px] text-[#172B4D] font-semibold">{title}</span>

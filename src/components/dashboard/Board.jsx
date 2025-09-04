@@ -23,10 +23,12 @@ function SortableItem({ id }) {
     transform: CSS.Transform.toString(transform),
     transition,
     width: "272px",
+    height: "100vh",
     borderRadius: "6px",
     marginBottom: "8px",
     cursor: "grab",
     marginRight: "18px",
+    backgroundColor: "#f1f2f4",
   };
 
   return (
@@ -68,7 +70,6 @@ function Board() {
           >
             <SortableContext
               items={items}
-              // strategy={verticalListSortingStrategy}
             >
               {items.map((id) => (
                 <SortableItem key={id} id={id} />
