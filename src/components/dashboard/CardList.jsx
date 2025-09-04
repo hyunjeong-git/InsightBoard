@@ -1,3 +1,6 @@
+import Card from './Card';
+
+
 const CardList = ({title}) => {
   return (
     <div className="card-list flex flex-col justify-between w-[272] max-h-full bg-[#f1f2f4] rounded-xl p-4">
@@ -9,7 +12,11 @@ const CardList = ({title}) => {
           <button className="btn btn-primary">...</button>
         </div>
       </div>
-      <div className="card-list-content">{/* card 컴포넌트 */}</div>
+      <div className="card-list-content">
+        <Card />
+        <Card />
+        <Card />
+      </div>
       <div className="card-list-footer">
         <button className="btn w-full pt-[6px] pr-3 pb-[6px] pl-2 rounded-lg text-left text-sm/[20px] text-[#44546F] font-medium hover:bg-[#091e4224] hover:text-[#172b4d]">+ Add a card</button>
       </div>

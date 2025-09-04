@@ -22,17 +22,16 @@ function SortableItem({ id }) {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
-    padding: "12px",
-    // border: "1px solid gray",
+    width: "272px",
     borderRadius: "6px",
     marginBottom: "8px",
-    background: "white",
     cursor: "grab",
+    marginRight: "18px",
   };
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <CardList title="Today"/>
+      <CardList title={id}/>
     </div>
   );
 }
@@ -41,7 +40,7 @@ function Board() {
   const params = useParams();
   const title = params.id || "Default Board Title";
 
-  const [items, setItems] = useState(["Apple", "Banana", "Cherry"]);
+  const [items, setItems] = useState(["Today", "This week", "Later"]);
 
   const sensors = useSensors(useSensor(PointerSensor));
 
@@ -61,7 +60,7 @@ function Board() {
       <div className="header h-[56px] p-4 border-b-2">{title}</div>
 
       <div className="content">
-        <div className="m-4 w-[300px]">
+        <div className="m-4 flex">
           <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
@@ -69,7 +68,7 @@ function Board() {
           >
             <SortableContext
               items={items}
-              strategy={verticalListSortingStrategy}
+              // strategy={verticalListSortingStrategy}
             >
               {items.map((id) => (
                 <SortableItem key={id} id={id} />
