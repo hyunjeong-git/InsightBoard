@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { getBitCoinPrices } from "./dashboardAPI";
+import { getBitCoinPrices } from "../../api/dashboardAPI";
 import TimeSeriesChart from "../../components/ charts/TimeSeriesChart";
 import DataTable from "../../components/table/DataTable";
 import Board from "../../components/dashboard/Board";
