@@ -17,7 +17,7 @@ import { CSS } from "@dnd-kit/utilities";
 import CardList from "./CardList";
 import Inbox from "./Inbox";
 
-function SortableItem({ id }) {
+function SortableItem({ id, index }) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
   const style = {
@@ -34,7 +34,7 @@ function SortableItem({ id }) {
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <CardList title={id}/>
+      <CardList title={id} userId={index}/>
     </div>
   );
 }
@@ -74,8 +74,8 @@ function Board() {
               onDragEnd={handleDragEnd}
             >
               <SortableContext items={items}>
-                {items.map((id) => (
-                  <SortableItem key={id} id={id} />
+                {items.map((id, index) => (
+                  <SortableItem key={id} id={id} index={index + 1}/>
                 ))}
               </SortableContext>
             </DndContext>
