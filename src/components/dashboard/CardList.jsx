@@ -15,7 +15,7 @@ const CardList = ({ title, userId }) => {
   console.log(data);
   const cards = data.filter((todo) => todo.userId === userId).slice(0, 5); // userId에 해당하는 카드만 필터링하고 최대 5개까지만 표시
   const cardItems = cards.map((todo) => (
-    <Card key={todo.id} title={todo.title} />
+    <Card key={todo.id} todo={todo} />
   ));
 
   return (
