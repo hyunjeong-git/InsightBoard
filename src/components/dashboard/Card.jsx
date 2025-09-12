@@ -22,9 +22,11 @@ const CheckIcon = (checked) => {
 };
 
 const Card = (props) => {
-  console.log(props);
-  const todo = props.todo;
   const [isHovered, setIsHovered] = useState(false);
+  const [todo, setTodo] = useState(props.todo);
+  const onToggle = () => {
+    setTodo(prev => ({ ...prev, completed: !prev.completed }));
+  }
 
   return (
     <div
@@ -37,7 +39,9 @@ const Card = (props) => {
       <div className="card-content flex items-center p-2 border rounded-lg shadow-sm bg-white">
         {CheckIcon(todo.completed)}
         {isHovered && !todo.completed ? (
-          <img src="/public/images/icons8-circle-21.png" />
+          <button data-dndkit-disabled-drag onPointerDown={(e) => e.stopPropagation()} onClick={() => onToggle()} className="ml-1 mr-2">
+            <img src="/public/images/icons8-circle-21.png" />
+          </button>
         ) : null}
         <div className="w-[calc(100%-24px)]">
           <p className="text-sm text-[#172B4D] font-medium p-2">{todo.title}</p>
